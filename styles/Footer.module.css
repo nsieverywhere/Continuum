@@ -1,0 +1,15 @@
+.footer {
+    background-color: #19A7CE;
+    height: 15rem;
+    padding: 2rem;
+    position: relative;
+    color: white;
+}
+
+.copyright {
+    color: white;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+}
+

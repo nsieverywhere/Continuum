@@ -1,0 +1,29 @@
+.logo{
+    color: #F6F1F1;
+    
+}
+
+.logo:hover {
+    color: #F6F1F1;
+}
+
+.navbar {
+        padding: .8rem 1rem;
+    background-color: #19A7CE;
+}
+
+.links {
+    color: #F6F1F1;
+}
+
+.links:hover{
+    color: #0f4863;
+}
+
+.auth {
+    margin-left: 3rem;
+}
+
+.linkicon{
+    margin-right: .3rem;
+}

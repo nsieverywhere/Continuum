@@ -1,0 +1,15 @@
+.container {
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome{
+    margin-bottom: 2rem;
+}
+
+.textarea{
+    width: 50rem;
+}

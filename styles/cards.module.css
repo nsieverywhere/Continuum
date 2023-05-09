@@ -1,0 +1,10 @@
+.card {
+    background-color: #cbe2ec;
+    min-height: 19rem;
+    margin: 1rem;
+}
+
+.links{
+    text-decoration: none;
+    color: #1a1a1a;
+}

@@ -1,0 +1,19 @@
+.container{
+    margin: 0;
+    padding: 3rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.subheading {
+    margin: 2rem 0 2rem 0;
+    text-align: center;
+    color: #346D95;
+    text-decoration: underline;
+}
+
+.links{
+    text-decoration: none;
+    color: #1a1a1a;
+}
