@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "../styles/Portal.module.css";
+import styles from "../styles/Portalnav.module.css";
 import { useRouter } from "next/router";
 import { faPlus, faEye, faGear, faArrowRightFromBracket} from "@fortawesome/free-solid-svg-icons";
 

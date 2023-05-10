@@ -18,10 +18,10 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <title>Continuum</title>
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="stylesheet"
-          href="https://www.w3schools.com/w3css/4/w3.css"
-        ></link>
+        {/* fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"/>
       </Head>
       <Nav />
       <Component {...pageProps} />

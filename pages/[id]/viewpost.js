@@ -31,7 +31,6 @@ export default Viewpost;
 export const getServerSideProps = async (userid) => {
     // getting id from userid object
     await connectMongo();
-    console.log("dB connected");
 
   let userData = await User.findOne({ _id: userid.params.id });
 

@@ -27,7 +27,6 @@ export default Settings;
 
 export const getServerSideProps = async (userid) => {
     await connectMongo();
-    console.log("dB connected");
 
   let userData = await User.findOne({ _id: userid.params.id });
 
