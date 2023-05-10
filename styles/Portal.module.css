@@ -7,13 +7,14 @@
 
 .main{
     margin-left: 5rem;
-    padding: 1rem;
+    padding: 1rem 5rem 0rem 1rem;
+
+
 }
 
 .navbar{
     background-color: #53A8CE;
-    width: 5rem;
-    height: 100vh;
+   
     position: fixed;
     transition: width 200ms ease;
 }
@@ -44,14 +45,21 @@
     align-items: center;
     justify-content: center;
     height: 5rem;
-    color: black;
+    color: white;
     text-decoration: none;
+    filter: grayscale(100% ) opacity(0.85);
+    transition: 600ms;
+
 }
 
 
+.navlink:hover{
+    filter: grayscale(0%) opacity(1);
+    background-color: #346d95;
+    color: #ffc107;
+}
+
 .navicon{
-    /* color: rgb(43, 43, 43); */
-    color: white;
     font-size: 1.7rem;
 }
 
@@ -61,16 +69,48 @@
     color: white;
 }
 
+
+
+
+/* small screens */
+@media only screen and (max-width: 600px){
+    .navbar{
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .navbarnav{
+        flex-direction: row;
+    }
+
+    .navlink{
+        justify-content: center;
+    }
+
+    .main{
+        margin-left: 0;
+        padding: 2rem;
+    }
+
+
+}
+
+/* large screens */
+@media only screen and (min-width: 600px){
+.navbar{
+    /* top: 0; */
+    width: 5rem;
+    height: 100vh;
+}
+
 .navbar:hover{
     width: 16rem;
-
 }
 
-.navlink:hover{
-    background-color: #346d95;
-
-}
 
 .navbar:hover .linktext{
     display: block;
+}
+
 }

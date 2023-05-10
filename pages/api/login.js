@@ -18,6 +18,7 @@ export default async function handler(req, res) {
             res
               .status(200)
               .json({ userid: docs[0]._id, message: "Signing in" });
+            // sending the user id back to the front end as userid
           } else {
             res.status(400).json({ message: "Password is incorrect." });
           }

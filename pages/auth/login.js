@@ -34,11 +34,14 @@ const Login = () => {
             }, 2000);
           } else {
             setInfo("Signing in...");
+
             router.push({
-              pathname: `/portal/${data.userid}/`,
+              pathname: `/${data.userid}/`,
+              // when logging in, an object is sent to the next page.
               // query: {
               //   userid: data.userid,
               // },
+              // as: "/userid/",
             });
           }
         });

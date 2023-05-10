@@ -4,54 +4,23 @@ import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus,
-  faEye,
-  faGear
- 
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlus,faEye,faGear,faArrowRightFromBracket} from "@fortawesome/free-solid-svg-icons";
+import Portalnav from "../../components/portalnav";
 
 
-const Protal = ({ user }) => {
-  const router = useRouter();
-  const userid = router.query.userid;
-
+const Portal = ({ user }) => {
+  // works if i sent a query from the login page(previous page)
+  // const router = useRouter();
+  // const { userid } = router.query;
+  
   return (
     <div className={styles.container}>
       <div className="row">
-        <div className={` ${styles.navbar}`}>
-          <ul className={styles.navbarnav}>
-            <li className={styles.navitem}>
-              <Link className={styles.navlink} href="/auth/signup">
-              <FontAwesomeIcon
-                  icon={faPlus}
-                  className={` ${styles.navicon}`}
-                />
-                <p className={styles.linktext}>Create Post</p>  
-              </Link>
-            </li>
-            <li className={styles.navitem}>
-              <Link className={styles.navlink} href="/auth/signup">
-              <FontAwesomeIcon
-                  icon={faEye}
-                  className={` ${styles.navicon}`}
-                />
-                <p className={styles.linktext}> View Post</p>  
-                </Link>
-            </li>
-            <li className={styles.navitem}>
-              <Link className={styles.navlink} href="/auth/signup">      
-              <FontAwesomeIcon
-                  icon={faGear}
-                  className={` ${styles.navicon}`}
-                />
-                <p className={styles.linktext}> Settings</p>
-              </Link>
-            </li>
-          </ul>
-          <div >
-          </div>
-        </div>
+
+        {/* passing user ID to the navbar: Portalnav after fetching from the db
+         for global usage in app*/}
+        <Portalnav userid={user._id} />
+       
         <div className={` ${styles.main}`}>
           <h3 className={styles.welcome}>Welcome, {user.fname}</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -68,13 +37,16 @@ const Protal = ({ user }) => {
   );
 };
 
-export default Protal;
+export default Portal;
 
 export const getServerSideProps = async (userid) => {
+  // here userid is a object containing serveral data and 
+  // it is gotten back from the api after success
   await connectMongo();
   console.log("dB connected");
 
   let userData = await User.findOne({ _id: userid.params.id });
+  // gets a single user information and stores in userData
 
   return {
     props: {
