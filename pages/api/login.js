@@ -1,7 +1,7 @@
 import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
+// const saltRounds = 10;
 
 export default async function handler(req, res) {
   await connectMongo();

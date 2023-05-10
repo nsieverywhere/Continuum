@@ -1,15 +1,76 @@
 .container {
     margin: 0;
-    padding: 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.welcome{
-    margin-bottom: 2rem;
+.main{
+    margin-left: 5rem;
+    padding: 1rem;
 }
 
-.textarea{
-    width: 50rem;
+.navbar{
+    background-color: #53A8CE;
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    transition: width 200ms ease;
+}
+
+.navbarnav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+}
+
+.navitem{
+    width: 100%;
+}
+
+.navitem:last-child{
+   margin-top: auto;
+   margin-bottom: 5rem;
+}
+
+.navlink{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    color: black;
+    text-decoration: none;
+}
+
+
+.navicon{
+    /* color: rgb(43, 43, 43); */
+    color: white;
+    font-size: 1.7rem;
+}
+
+.linktext{
+    display: none;
+    margin-left: 1rem;
+    color: white;
+}
+
+.navbar:hover{
+    width: 16rem;
+
+}
+
+.navlink:hover{
+    background-color: #346d95;
+
+}
+
+.navbar:hover .linktext{
+    display: block;
 }
