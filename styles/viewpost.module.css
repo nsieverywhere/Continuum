@@ -6,8 +6,8 @@
 }
 
 .main{
-    margin-left: 5rem;
-    padding: 1rem 5rem 0rem 1rem;
+    padding: 1rem 2rem 0rem 6rem;
+
 }
 
 
@@ -38,19 +38,7 @@
 
 /* large screens */
 @media only screen and (min-width: 600px){
-.navbar{
-    /* top: 0; */
-    width: 5rem;
-    height: 100vh;
-}
 
-.navbar:hover{
-    width: 16rem;
-}
-
-
-.navbar:hover .linktext{
-    display: block;
-}
+  
 
 }

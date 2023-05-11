@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className={styles.copyright}>Continuum, All rights reserved 2023.</p>
+      <p className={styles.copyright}>Continuum, All rights reserved 2023. Developed by Nsikan Simon-Okon.</p>
     </footer>
   );
 };

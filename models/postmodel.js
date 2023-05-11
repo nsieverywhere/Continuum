@@ -2,9 +2,11 @@ import { Schema, model, models } from "mongoose";
 
 const postSchema = new Schema({
   title: String,
-  body: String,
+  blog: String,
   date: String,
-  Ownerid: String,
+  ownerid: String,
+  owner: String,
+  
 });
 
 const Post = models.Post || model("Post", postSchema);

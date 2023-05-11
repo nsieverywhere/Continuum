@@ -5,28 +5,16 @@
     flex-direction: column;
 }
 
-.main{
-    margin-left: 5rem;
-    padding: 1rem 5rem 0rem 1rem;
-}
 
+.main{
+    padding: 1rem 2rem 0rem 6rem;
+
+}
 
 
 /* small screens */
 @media only screen and (max-width: 600px){
-    .navbar{
-        bottom: 0;
-        width: 100vw;
-        height: 5rem;
-    }
 
-    .navbarnav{
-        flex-direction: row;
-    }
-
-    .navlink{
-        justify-content: center;
-    }
 
     .main{
         margin-left: 0;
@@ -38,19 +26,7 @@
 
 /* large screens */
 @media only screen and (min-width: 600px){
-.navbar{
-    /* top: 0; */
-    width: 5rem;
-    height: 100vh;
-}
+   
 
-.navbar:hover{
-    width: 16rem;
-}
-
-
-.navbar:hover .linktext{
-    display: block;
-}
 
 }

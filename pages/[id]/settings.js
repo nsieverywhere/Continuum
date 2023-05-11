@@ -10,7 +10,7 @@ const Settings = ({user}) => {
     const router = useRouter();
     const data = router.query;
 
-    return ( <div className={styles.container}>
+    return ( <div className={`container-fluid ${styles.container}`}>
         <div className="row">
         <Portalnav  userid={user._id}/>
             

@@ -6,19 +6,25 @@
 }
 
 .main{
-    margin-left: 5rem;
-    padding: 1rem 8rem 0rem 1rem;
+    padding: 1rem 2rem 0rem 6rem;
+
+}
+
+.title,.content{
+    margin-bottom: 2rem;
+}
+
+.welcome {
+    margin-bottom: 0rem;
 }
 
 .title{
-    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
-
-
-
-.welcome{
-    margin-bottom: 2rem;
+.btn{
+    position: absolute;
+    right: 35px;
 }
 
 
