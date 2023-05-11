@@ -77,6 +77,7 @@ const Portal = ({ user }) => {
                 placeholder="Enter your blog title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                required
               />
             </div>
             <div className={`form-group ${styles.content}`}>
@@ -87,6 +88,8 @@ const Portal = ({ user }) => {
                 rows="8"
                 value={post}
                 onChange={(e) => setPost(e.target.value)}
+                required
+
               ></textarea>
             </div>
             <select className="custom-select">

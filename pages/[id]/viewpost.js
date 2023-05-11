@@ -1,12 +1,14 @@
 import Portalnav from "../../components/portalnav";
 import styles from "../../styles/viewpost.module.css";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
+import Post from "../../models/postmodel";
+import Link from "next/link";
 
-const Viewpost = ({ user }) => {
-  const router = useRouter();
-  const data = router.query;
+const Viewpost = ({ user, posts }) => {
+  // const router = useRouter();
+  // const data = router.query;
 
   // const { asPath, pathname } = useRouter();
   // console.log(asPath)
@@ -20,62 +22,42 @@ const Viewpost = ({ user }) => {
             <thead className="thead-dark">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table className="table">
-            <thead className="thead-light">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
+            {posts.map((post) => {
+              return (
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>{post.title}</td>
+                    <td>{post.blog.slice(0, 100)}</td>
+                    <td>
+                      <Link
+                        href={{
+                          pathname: `/${user._id}/edit/`,
+                        }}
+                      >
+                        <button className={` ${styles.editbtn}  `}>Edit</button>
+                      </Link>
+                      <Link
+                        href={{
+                          pathname: `/${user._id}/deletepost/`,
+                        }}
+                      >
+                        <button
+                          className={`btn btn-danger ${styles.deletebtn}  `}
+                        >
+                          Delete
+                        </button>
+                      </Link>
+                    </td>
+                  </tr>
+                </tbody>
+              );
+            })}
           </table>
         </div>
       </div>
@@ -90,10 +72,13 @@ export const getServerSideProps = async (userid) => {
   await connectMongo();
 
   let userData = await User.findOne({ _id: userid.params.id });
+  let postData = await Post.find({ ownerid: userid.params.id });
+  console.log(postData);
 
   return {
     props: {
       user: JSON.parse(JSON.stringify(userData)),
+      posts: JSON.parse(JSON.stringify(postData)),
     },
   };
 };
