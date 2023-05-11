@@ -13,7 +13,7 @@ const Blog = ({posts}) => {
     <div className={styles.container}>
       <h2>All your favourite gists, here for you...</h2>
         <div className="card-group">
-          {posts.map((post)=>{
+          {posts.slice(0).reverse().map((post)=>{
             return <Cards post={post} />
             
           })}
@@ -27,14 +27,11 @@ export default Blog;
 
 export const getServerSideProps = async () => {
   await connectMongo();
-  console.log("dB connected");
 
   let postData = await Post.find();
   // gets all the posts
 
-  postData.forEach((element) => {
-    console.log(element.title)
-  })
+ 
 
   return {
     props: {

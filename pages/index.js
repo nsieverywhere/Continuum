@@ -27,7 +27,7 @@ export default function Home({posts}) {
         <div className={styles.container}>
           <h2 className={styles.info}>Read the Latest on Continuum</h2>
           <div className="card-group">
-            {posts.map((post)=>{
+            {posts.slice(0,3).reverse().map((post)=>{
               return <Cards post={post} />
               
             })}
@@ -49,7 +49,6 @@ export const getServerSideProps = async () => {
 
   let postData = await Post.find();
   // gets all the posts
-  console.log(postData)
 
   return {
     props: {
