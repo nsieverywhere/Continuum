@@ -69,7 +69,7 @@ const Portal = ({ user }) => {
 
           <form onSubmit={handler}>
             <div  className={`form-group ${styles.title}`}>
-              <label for="exampleFormControlInput1">Title</label>
+              <label htmlFor="exampleFormControlInput1">Title</label>
               <input
                 type="text"
                 className="form-control"
@@ -81,7 +81,7 @@ const Portal = ({ user }) => {
               />
             </div>
             <div className={`form-group ${styles.content}`}>
-              <label for="exampleFormControlTextarea1">Blog Content</label>
+              <label htmlFor="exampleFormControlTextarea1">Blog Content</label>
               <textarea
                 className="form-control"
                 id="exampleFormControlTextarea1"
@@ -93,7 +93,7 @@ const Portal = ({ user }) => {
               ></textarea>
             </div>
             <select className="custom-select">
-              <option selected>Category</option>
+              <option defaultValue>Category</option>
               <option value="1">Technology</option>
               <option value="2">Art</option>
               <option value="3">Politics</option>

@@ -5,6 +5,7 @@ import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
 import Post from "../../models/postmodel";
 import Link from "next/link";
+import { useRef, useState } from "react";
 
 const Viewpost = ({ user, posts }) => {
   // const router = useRouter();
@@ -12,6 +13,38 @@ const Viewpost = ({ user, posts }) => {
 
   // const { asPath, pathname } = useRouter();
   // console.log(asPath)
+  // const popup = useRef(null);
+
+  // function openPopup() {
+  //   // popup.current.className = "openpopup";
+  //   popup.current.classList.add("openpopup");
+  //   console.log(popup.current.classList)
+  // }
+
+  // function closePopup() {
+  //   // popup.current.className = "closepopup";
+  //   popup.current.classList.remove("openpopup");
+  //   console.log(popup.current.classList)
+  // }
+
+  const [prompt, setPrompt] = useState(false);
+  const [deletepost, setDeletepost] = useState(false);
+  const [postid, setPostid] = useState("");
+
+  const promptDelete = (id) => {
+    setPrompt(!prompt);
+    setPostid(id);
+
+  };
+
+  const deletePost = (id) => {
+    setDeletepost(!deletePost);
+    setPrompt(!prompt);
+    alert(postid);
+
+
+    setPostid("")
+  };
 
   return (
     <div className={`container-fluid ${styles.container}`}>
@@ -29,36 +62,66 @@ const Viewpost = ({ user, posts }) => {
             </thead>
             {posts.map((post) => {
               return (
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>{post.title}</td>
-                    <td>{post.blog.slice(0, 100)}</td>
-                    <td>
-                      <Link
-                        href={{
-                          pathname: `/${user._id}/edit/`,
-                        }}
-                      >
-                        <button className={` ${styles.editbtn}  `}>Edit</button>
-                      </Link>
-                      <Link
-                        href={{
-                          pathname: `/${user._id}/deletepost/`,
-                        }}
-                      >
+                <>
+                  <tbody key={post._id}>
+                    <tr key={post._id}>
+                      <th key={post._id} scope="row">
+                        #
+                      </th>
+
+                      <td key={post._id}>{post.title} </td>
+                      <td key={post._id}>{post.blog.slice(0, 100)}</td>
+                      <td key={post._id}>
+                        <Link
+                          href={{
+                            pathname: `/${user._id}/edit/`,
+                          }}
+                        >
+                          <button className={` ${styles.editbtn}  `}>
+                            Edit
+                          </button>
+                        </Link>
                         <button
                           className={`btn btn-danger ${styles.deletebtn}  `}
+                          onClick={() => {
+                            let id = post._id;
+
+                            promptDelete(id);
+                          }}
                         >
                           Delete
                         </button>
-                      </Link>
-                    </td>
-                  </tr>
-                </tbody>
+                      </td>
+                    </tr>
+                  </tbody>
+                </>
               );
             })}
           </table>
+          {prompt && (
+            <div>
+              <div className={` ${styles.overlay}`}> </div>
+              <div className={` ${styles.popup}`}>
+                <h5>Are you sure you want to delete this post?</h5>
+                <button
+                  className={`btn btn-danger ${styles.deletebtn}  `}
+                  onClick={promptDelete}
+                >
+                  Cancel
+                </button>
+                <button
+                  className={`btn btn-success  ${styles.confirmbtn} ${styles.popupbtn}  `}
+                  onClick={() => {
+                    
+
+                    deletePost();
+                  }}
+                >
+                  Yes
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -73,7 +136,7 @@ export const getServerSideProps = async (userid) => {
 
   let userData = await User.findOne({ _id: userid.params.id });
   let postData = await Post.find({ ownerid: userid.params.id });
-  console.log(postData);
+  // console.log(postData);
 
   return {
     props: {

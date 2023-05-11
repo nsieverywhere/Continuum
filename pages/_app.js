@@ -20,7 +20,7 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="icon" href="/favicon.ico" />
         {/* fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        {/* <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/> */}
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"/>
       </Head>
       <Nav />

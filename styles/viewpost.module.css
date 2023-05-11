@@ -20,9 +20,66 @@
   margin-bottom: 0.5rem;
 }
 
+.confirmbtn {
+  background-color: #346d95;
+  color: white;
+  width: 144px;
+  height: 42px;
+  border-radius: 0.4rem;
+  border: none;
+  display: inline-block;
+
+}
+
 .deletebtn {
   display: inline-block;
   width: 144px;
+  height: 42px;
+  background-color: red;
+}
+
+.dltbtn{
+  background-color: blue;
+  width: 144px;
+
+}
+
+.popup{
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.4s, top 0.4s;
+  transform: translate(-50%, -50%) scale(1);
+  border: #346d95 1px solid;
+  height: 12rem;
+  padding: 2rem;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(49,49,49,0.8);
+}
+
+.closepopup {
+  visibility: hidden;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+}
+
+.popupbtn {
+  margin-left: 1rem;
+  background-color: rgb(84, 209, 84);
+  
 }
 
 /* small screens */
