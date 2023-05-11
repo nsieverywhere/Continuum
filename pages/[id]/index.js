@@ -2,16 +2,15 @@ import { useRouter } from "next/router";
 import styles from "../../styles/Portal.module.css";
 import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus,
-  faEye,
-  faGear,
-  faArrowRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faPlus,
+//   faEye,
+//   faGear,
+//   faArrowRightFromBracket,
+// } from "@fortawesome/free-solid-svg-icons";
 import Portalnav from "../../components/portalnav";
 
 const Portal = ({ user }) => {
