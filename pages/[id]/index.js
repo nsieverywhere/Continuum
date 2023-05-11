@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import styles from "../../styles/Portal.module.css";
 import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
