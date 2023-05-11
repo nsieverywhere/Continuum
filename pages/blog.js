@@ -12,7 +12,7 @@ const Blog = ({posts}) => {
     </Head>
     <div className={styles.container}>
       <h2>All your favourite gists, here for you...</h2>
-        <div class="card-group">
+        <div className="card-group">
           {posts.map((post)=>{
             return <Cards post={post} />
             

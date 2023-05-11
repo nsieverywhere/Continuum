@@ -74,7 +74,7 @@ const Portal = ({ user }) => {
               <label for="exampleFormControlInput1">Title</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Enter your blog title"
                 value={title}
@@ -84,14 +84,14 @@ const Portal = ({ user }) => {
             <div className={`form-group ${styles.content}`}>
               <label for="exampleFormControlTextarea1">Blog Content</label>
               <textarea
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
                 rows="8"
                 value={post}
                 onChange={(e) => setPost(e.target.value)}
               ></textarea>
             </div>
-            <select class="custom-select">
+            <select className="custom-select">
               <option selected>Category</option>
               <option value="1">Technology</option>
               <option value="2">Art</option>
@@ -99,7 +99,7 @@ const Portal = ({ user }) => {
               <option value="4">Business</option>
             </select> <br/>
             <p>{info}</p>
-            <button type="submit" class= {`btn btn-primary ${styles.btn}`}>Post</button>
+            <button type="submit" className= {`btn btn-primary ${styles.btn}`}>Post</button>
           </form>
         </div>
       </div>

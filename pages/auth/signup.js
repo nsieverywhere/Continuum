@@ -54,7 +54,7 @@ const Signup = () => {
         <h5>Join Continuum</h5>
 
         <form onSubmit={handler}>
-          <div class="form-group">
+          <div className="form-group">
             <small>Email: </small>
             <input
               className={styles.input}
@@ -65,7 +65,7 @@ const Signup = () => {
               required
             />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <small>Firstname: </small>
             <input
               className={styles.input}
@@ -76,7 +76,7 @@ const Signup = () => {
               required
             />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <small>Lastname: </small>
             <input
               className={styles.input}
@@ -87,7 +87,7 @@ const Signup = () => {
               required
             />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <small>Username: </small>
             <input
               className={styles.input}
@@ -98,7 +98,7 @@ const Signup = () => {
               required
             />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <small>Password: </small>
             <input
               className={styles.input}

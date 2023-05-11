@@ -26,7 +26,7 @@ export default function Home({posts}) {
 
         <div className={styles.container}>
           <h2 className={styles.info}>Read the Latest on Continuum</h2>
-          <div class="card-group">
+          <div className="card-group">
             {posts.map((post)=>{
               return <Cards post={post} />
               

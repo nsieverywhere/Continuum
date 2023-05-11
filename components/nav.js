@@ -24,7 +24,7 @@ const Nav = () => {
           alt="Continuum Logo"
         />
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -32,17 +32,17 @@ const Nav = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class=" collapse navbar-collapse" id="navbarNav">
-          <ul class=" navbar-nav ms-auto">
-            <li class="nav-item active">
+        <div className=" collapse navbar-collapse" id="navbarNav">
+          <ul className=" navbar-nav ms-auto">
+            <li className="nav-item active">
               <Link className={`nav-link  ${styles.links}   `} href="/">
                 Home
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link className={`nav-link  ${styles.links}   `} href="/blog">
                 Blogs
               </Link>

@@ -16,8 +16,8 @@ const Viewpost = ({ user }) => {
       <div className="row">
         <Portalnav userid={user._id} />
         <div className={` ${styles.main}`}>
-          <table class="table">
-            <thead class="thead-dark">
+          <table className="table">
+            <thead className="thead-dark">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">First</th>
@@ -47,8 +47,8 @@ const Viewpost = ({ user }) => {
             </tbody>
           </table>
 
-          <table class="table">
-            <thead class="thead-light">
+          <table className="table">
+            <thead className="thead-light">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">First</th>
