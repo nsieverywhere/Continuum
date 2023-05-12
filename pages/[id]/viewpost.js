@@ -28,8 +28,10 @@ const Viewpost = ({ user, posts }) => {
   // }
 
   const [prompt, setPrompt] = useState(false);
-  const [deletepost, setDeletepost] = useState(false);
+  // const [deletepost, setDeletepost] = useState(false);
   const [postid, setPostid] = useState("");
+  const [info, setInfo] = useState("");
+
 
   const promptDelete = (id) => {
     setPrompt(!prompt);
@@ -37,13 +39,34 @@ const Viewpost = ({ user, posts }) => {
 
   };
 
-  const deletePost = (id) => {
-    setDeletepost(!deletePost);
+  const deletePost = () => {
     setPrompt(!prompt);
-    alert(postid);
 
+    const deletePostData = async (postid) => {
+      const data = {
+        id: postid
+      };
 
-    setPostid("")
+      const response = await fetch("/api/delete", {
+        method: "POST",
+        body: JSON.stringify(data),
+      }).then((response) => {
+        response.json().then((data) => {
+          if (data.message == "post does not exist") {
+            setInfo("post does not exist");
+            window.setTimeout(() => {
+              setInfo("");
+            }, 2000);
+          }  else {
+            setInfo("Post deleted");
+            window.setTimeout(() => {
+              setInfo("");
+            }, 2000);
+          }
+        });
+      });
+    };
+    deletePostData(postid);
   };
 
   return (
@@ -98,6 +121,8 @@ const Viewpost = ({ user, posts }) => {
               );
             })}
           </table>
+          {info}
+
           {prompt && (
             <div>
               <div className={` ${styles.overlay}`}> </div>
