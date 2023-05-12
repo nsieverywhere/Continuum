@@ -3,13 +3,6 @@ import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
 import { useState, } from "react";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faPlus,
-//   faEye,
-//   faGear,
-//   faArrowRightFromBracket,
-// } from "@fortawesome/free-solid-svg-icons";
 import Portalnav from "../../components/portalnav";
 
 const Portal = ({ user }) => {

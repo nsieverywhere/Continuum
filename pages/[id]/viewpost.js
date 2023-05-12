@@ -1,11 +1,11 @@
 import Portalnav from "../../components/portalnav";
 import styles from "../../styles/viewpost.module.css";
-// import { useRouter } from "next/router";
 import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
 import Post from "../../models/postmodel";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import Table from "../../components/table";
 
 const Viewpost = ({ user, posts }) => {
   // const router = useRouter();
@@ -13,30 +13,15 @@ const Viewpost = ({ user, posts }) => {
 
   // const { asPath, pathname } = useRouter();
   // console.log(asPath)
-  // const popup = useRef(null);
 
-  // function openPopup() {
-  //   // popup.current.className = "openpopup";
-  //   popup.current.classList.add("openpopup");
-  //   console.log(popup.current.classList)
-  // }
-
-  // function closePopup() {
-  //   // popup.current.className = "closepopup";
-  //   popup.current.classList.remove("openpopup");
-  //   console.log(popup.current.classList)
-  // }
 
   const [prompt, setPrompt] = useState(false);
-  // const [deletepost, setDeletepost] = useState(false);
   const [postid, setPostid] = useState("");
   const [info, setInfo] = useState("");
-
 
   const promptDelete = (id) => {
     setPrompt(!prompt);
     setPostid(id);
-
   };
 
   const deletePost = () => {
@@ -67,6 +52,7 @@ const Viewpost = ({ user, posts }) => {
       });
     };
     deletePostData(postid);
+    // location.reload();
   };
 
   return (
@@ -74,7 +60,7 @@ const Viewpost = ({ user, posts }) => {
       <div className="row">
         <Portalnav userid={user._id} />
         <div className={` ${styles.main}`}>
-          <table className="table">
+          {/* <table className="table">
             <thead className="thead-dark">
               <tr>
                 <th scope="col">#</th>
@@ -121,7 +107,9 @@ const Viewpost = ({ user, posts }) => {
               );
             })}
           </table>
-          {info}
+          {info} */}
+
+          <Table promptDelete={promptDelete} info={info} user={user} posts= {posts} />
 
           {prompt && (
             <div>
