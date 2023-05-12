@@ -19,7 +19,35 @@ const Viewpost = ({ user, posts }) => {
   function handler(e) {
     e.preventDefault();
 
-    alert("function call");
+
+    const postData = async () => {
+      const data = {
+        title: title,
+        blog: post,
+        id: posts._id
+      };
+
+      const response = await fetch("/api/edit", {
+        method: "POST",
+        body: JSON.stringify(data),
+      }).then((response) => {
+        response.json().then((data) => {
+          if (data.message == "done") {
+            setInfo("Done");
+            setTitle("");
+            setPost("");
+            window.setTimeout(() => {
+              setInfo("");
+            }, 2000);
+          } else {
+            setInfo("Something went wrong");
+
+          }
+        })
+      })
+    }
+
+  postData(); 
   }
 
   return (
@@ -69,7 +97,7 @@ const Viewpost = ({ user, posts }) => {
               Go Back
             </button>
             <button type="submit" className={`btn btn-primary ${styles.btn}`}>
-              Post
+              Update
             </button>
           </form>
         </div>

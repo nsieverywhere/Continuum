@@ -52,7 +52,7 @@ const Viewpost = ({ user, posts }) => {
       });
     };
     deletePostData(postid);
-    // location.reload();
+    location.reload();
   };
 
   return (

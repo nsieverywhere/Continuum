@@ -1,5 +1,4 @@
 import connectMongo from "../../utils/connectdb";
-import Post from "../../models/postmodel";
 const mongoose = require("mongoose");
 // import { ObjectId } from 'mongodb'
 
