@@ -9,8 +9,12 @@ config.autoAddCss = false;
 import Head from "next/head";
 
 const MyApp = ({ Component, pageProps }) => {
+  // useEffect(() => {
+  //   require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  // }, []);
+
   useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    import("bootstrap/dist/js/bootstrap");
   }, []);
 
   return (
