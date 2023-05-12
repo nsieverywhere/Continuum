@@ -5,40 +5,64 @@ import Link from "next/link";
 import connectMongo from "../utils/connectdb";
 import Post from "../models/postmodel";
 
-
-export default function Home({posts}) {
+export default function Home({ posts }) {
   return (
     <>
       <Head>
         <title>Continuum | Home</title>
-      </Head>      
+        </Head>
       <div className="container-fluid">
-      <div className="row">
-        <div  className={styles.heroimage}>
-          <div className={styles.herotext} >
-            <h1>Welcome to Continuum</h1>
-            <p>Let the World hear it</p>
-            <Link href="/blog/">
-              <button>View Blogs</button>
-            </Link>
+        <div className="row">
+          <div className={styles.heroimage}>
+            <div className={styles.herotext}>
+              <h1>Welcome to Continuum</h1>
+              <p>Let the World hear it</p>
+              <Link href="/blog/">
+                <button>View Blogs</button>
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <div className={styles.container}>
-          <h2 className={styles.info}>Read the Latest on Continuum</h2>
-          <div className="card-group">
-            {posts.slice(0,3).reverse().map((post)=>{
-              return <Cards post={post} />
-              
-            })}
-           
+          <div className={styles.container}>
+            <h2 className={styles.info}>Read the Latest on Continuum</h2>
+            <div className="card-group">
+              {posts
+                .slice(0, 3)
+                .reverse()
+                .map((post) => {
+                  return <Cards post={post} />;
+                })}
+            </div>
+            <Link href="/blog/">
+              <h4 className={styles.subheading}>View all the topics</h4>
+            </Link>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">
+                  Action
+                </a>
+                <a class="dropdown-item" href="#">
+                  Another action
+                </a>
+                <a class="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </div>
+            </div>
           </div>
-          <Link href="/blog/">
-            <h4 className={styles.subheading}>View all the topics</h4>
-          </Link>
         </div>
-        </div>
-        </div>
+      </div>
     </>
   );
 }
