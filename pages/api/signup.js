@@ -14,6 +14,7 @@ export default async function handler(req, res) {
     case "POST":
       const { email, username, password, fname, lname } = JSON.parse(req.body);
       let usernames = username.toLowerCase();
+      console.log(usernames)
       await connectMongo();
       console.log("db connected");
 
@@ -21,7 +22,7 @@ export default async function handler(req, res) {
         if (docs[0] == undefined) {
           bcrypt.hash(password, saltRounds, function (err, hash) {
             const user = User.create({
-              usernames,
+              username: usernames,
               email,
               password: hash,
               fname,

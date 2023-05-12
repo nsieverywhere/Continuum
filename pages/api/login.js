@@ -8,7 +8,9 @@ export default async function handler(req, res) {
   console.log("db connected");
 
   const { username, password } = JSON.parse(req.body);
-  User.find({ username: username })
+      let usernames = username.toLowerCase();
+
+  User.find({ username: usernames })
     .then(function (docs) {
       if (docs[0] == undefined) {
         res.status(400).json({ message: "User does not exist" });
