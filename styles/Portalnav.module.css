@@ -3,6 +3,8 @@
     background-color: #53A8CE;
     position: fixed;
     transition: width 200ms ease;
+    z-index: 1;
+
 }
 
 .navbarnav{
