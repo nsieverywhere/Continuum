@@ -6,6 +6,7 @@ import connectMongo from "../utils/connectdb";
 import Post from "../models/postmodel";
 
 export default function Home({ posts }) {
+
   return (
     <>
       <Head>

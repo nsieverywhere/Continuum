@@ -2,7 +2,7 @@ import styles from "../../styles/Portal.module.css";
 import connectMongo from "../../utils/connectdb";
 import User from "../../models/usermodel";
 import { useState, } from "react";
-
+import {  signOut } from "next-auth/react"
 import Portalnav from "../../components/portalnav";
 
 const Portal = ({ user }) => {
@@ -59,6 +59,7 @@ const Portal = ({ user }) => {
         <div className={` ${styles.main}`}>
           <h3 className={styles.welcome}>Welcome, {user.fname}</h3>
           <small>what would you like to post?</small>
+
 
           <form onSubmit={handler}>
             <div  className={`form-group ${styles.title}`}>

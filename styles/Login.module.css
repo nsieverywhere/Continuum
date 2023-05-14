@@ -10,7 +10,7 @@
     align-items: center;
     background-color: #19a7ce;
     width: 20rem;
-    height: 20rem;
+    height: 23rem;
     border-radius: .5rem;
     margin: auto;
     padding: 2.5rem;
@@ -33,4 +33,19 @@
     border: none;
     height: 2.2rem;
 
+}
+
+.googlebtn{
+    background-color: yellow;
+    color: rgb(43, 43, 43);
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: .25rem;
+    border: none;
+    height: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.googleicon {
+    margin-right: .5rem;
 }
