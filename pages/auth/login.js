@@ -113,7 +113,7 @@ const Login = () => {
               </button>
               <button
                 className={styles.googlebtn}
-                onClick={() => signIn("google")}
+                onClick={() => signIn()}
               >
                 <FontAwesomeIcon className={styles.googleicon} icon={faG} />
                 Login with Google
