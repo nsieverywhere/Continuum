@@ -5,7 +5,7 @@
 
 .card {
     background-color: #cbe2ec;
-    min-height: 19rem;
+    min-height: 49rem;
     margin: 3rem 1rem 4rem 1rem;
 
 }
@@ -29,6 +29,19 @@
     border-radius: .4rem;
     border: none;
     margin-left: 1rem;
+}
+
+.cardimage{
+    object-fit: cover;
+}
+
+.posttitle{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.posttext {
+    font-size: 1.25rem;
 }
 
 @media only screen and (max-width: 600px){

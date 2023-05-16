@@ -3,6 +3,7 @@ import connectMongo from "../../utils/connectdb";
 import Post from "../../models/postmodel";
 import styles from "../../styles/blogpost.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const Blogpost = ({ content }) => {
   const router = useRouter();
@@ -14,10 +15,16 @@ const Blogpost = ({ content }) => {
       <div className="row">
         <div className="col-lg-8">
           <div className={`card ${styles.card}  `}>
-            {/* <img className="card-img-top" src="..." alt="Card image cap" /> */}
+          <Image
+              className={`card-img-top ${styles.cardimage}  `}
+              src="/image/continuum_hero.jpg"
+              width={500}
+              height={400}
+              alt="image title"
+              />
             <div className="card-body">
-              <h5 className="card-title">{content.title}</h5>
-              <p className="card-text">{content.blog}</p>
+              <h5 className= {`card-title ${styles.posttitle}  `}>{content.title}</h5>
+              <p   className= {`card-text ${styles.posttext}  `}>{content.blog}</p>
             </div>
             <div className="card-footer">
               <small className="text-muted">

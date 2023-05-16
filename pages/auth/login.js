@@ -122,7 +122,7 @@ const Login = () => {
             </form>
             <small>
               Don't have an account?
-              <Link href="/auth/signup">Signup </Link>
+              <Link className={styles.signuplink}  href="/auth/signup">Signup </Link>
             </small>
           </div>
         </div>

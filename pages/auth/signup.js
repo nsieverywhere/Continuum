@@ -116,7 +116,7 @@ const Signup = () => {
         </form>
         <small>
           Already have an account?
-          <Link href="/auth/login">Login </Link>
+          <Link className={styles.loginlink} href="/auth/login">Login </Link>
         </small>
       </div>
     </div>

@@ -1,51 +1,61 @@
 .container {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("/image/login.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.form{
-    align-items: center;
-    background-color: #19a7ce;
-    width: 20rem;
-    height: 23rem;
-    border-radius: .5rem;
-    margin: auto;
-    padding: 2.5rem;
-    color: white;
+.form {
+  align-items: center;
+  background-color: #19a7ce;
+  width: 20rem;
+  height: 23rem;
+  border-radius: 0.5rem;
+  margin: auto;
+  padding: 2.5rem;
+  color: white;
 }
 
-.input{
-    height: 2.2rem;
-    border-radius: .25rem;
-    border: none;
-    width: 100%;
+.input {
+  height: 2.2rem;
+  border-radius: 0.25rem;
+  border: none;
+  width: 100%;
 }
 
-.submitbtn{
-    background-color: #146C94;
-    color: white;
-    margin-top: 1rem;
-    width: 100%;
-    border-radius: .25rem;
-    border: none;
-    height: 2.2rem;
-
+.submitbtn {
+  background-color: #146c94;
+  color: white;
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: none;
+  height: 2.2rem;
 }
 
-.googlebtn{
-    background-color: yellow;
-    color: rgb(43, 43, 43);
-    margin-top: 1rem;
-    width: 100%;
-    border-radius: .25rem;
-    border: none;
-    height: 2.2rem;
-    margin-bottom: 2rem;
+.googlebtn {
+  background-color: yellow;
+  color: rgb(43, 43, 43);
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: none;
+  height: 2.2rem;
+  margin-bottom: 2rem;
 }
 
 .googleicon {
-    margin-right: .5rem;
+  margin-right: 0.5rem;
+}
+
+
+.signuplink{
+  color: yellow;
+  margin-left: .3rem;
 }
